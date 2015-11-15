@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	#myImg{
+		height: 500px;
+		width: 700px;
+	}
+	</style>
+	<script type="text/javascript" src="pinchTrack.js"></script>
+</head>
+<body>
+		8
+		<div id="div_log" style="width:400px;height:200px;overflow:auto;font-size:8"></div>
+		<div id="myImageDiv" style="height:300px;width:300px;overflow:hidden">
+			<img id="myImg" src="sample.jpg" style="height:300px;width:300px">
+		</div>
+		<div id="div_log2" style="width:400px;height:200px;overflow:auto;font-size:8"></div>
+	<script type="text/javascript">
+		var ptobject = new __pt("#myImg","#div_log");
+		ptobject.trackPinch(function(error, trackObject){
+			document.getElementById("div_log2").innerHTML = (JSON.stringify(error)+JSON.stringify(trackObject));
+			
+		});
+	</script>
+</body>
+</html>
